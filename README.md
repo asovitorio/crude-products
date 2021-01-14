@@ -1,0 +1,2 @@
+# crude-products
+NODE JS | REACT JS | SEQUELIZE | JEST | MYSQL | BCRYPT
