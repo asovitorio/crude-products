@@ -17,7 +17,6 @@ describe('teste das rotas', () => {
   it('should adiciona uma rota  status code 201 ', async () => {
     const pes = {name:"Alessandro",idade:49}
     const res = await request(app).post('/').send(pes);
-    console.log(res.body)
     expect(res.status).toBe(201);
     expect(res.body).toHaveProperty('name','Alessandro');
   });

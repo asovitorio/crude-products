@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "set NODE_ENV=production && nodemon src/index.js –ignore __tests__",
+    "dev": "set NODE_ENV=dev && nodemon ./src/bin/www –ignore __tests__",
     "dev2": "set NODE_ENV=dev && nodemon src/index.js –ignore __tests__",
     "start": "set NODE_ENV=production && node ./src/bin/www",
-    "test": "set NODE_ENV=test && jest –detectOpenHandles --forceExit"
-    },
+    "test": "set NODE_ENV=test && jest"
+  
+  },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
