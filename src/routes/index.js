@@ -1,11 +1,20 @@
 var express = require('express');
 const userController = require('../api/controllers/userController')
 var router = express.Router();
-/* GET home page. */
 
-require('dotenv').config()
-router.get('/', userController.index);
+// ######## ROUTES C.R.U.D.E. USER #########
+router.get('/user', userController.index);
+router.get('/user/:id', userController.showId);
+router.get('/search/user', userController.showParams);
+router.post('/user', userController.create);
+router.put('/user', userController.update);
+router.delete('/user', userController.delete);
 
-router.post('/', userController.create);
+// ######## ROUTES AUTH  #########
+
+
+// ######## ROUTES C.R.U.D.E. CUSTOMERS  #########
+
+
 
 module.exports = router;

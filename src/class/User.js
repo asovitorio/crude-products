@@ -36,8 +36,13 @@ class User {
     //#### returns true or false the comparison of the encrypted password
     async compare(hashpass) {
         const hash = await bcrypt.compare(this.getPassword(), hashpass)
-        return hash
+        return hash 
     }
+
+    async hash(password){
+        const hash = await bcrypt.hashSync(password, 8)
+        return  hash
+       }
 
 
 
