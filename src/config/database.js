@@ -7,7 +7,6 @@ module.exports = {
   // host:'bd-crude',
   dialect: process.env.DB_DIALECT,
   port: parseInt(process.env.DB_PORT) || 3306,
-  operatorsAliases: false,
   logging: false,
   define: {
     timestamps: true,

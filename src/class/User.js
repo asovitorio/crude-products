@@ -4,10 +4,10 @@ class User {
     constructor() {
 
         // #### Atributos Privados da classe Factory de objetos
-        let name = '';
-        let email = '';
-        let birthDate = '';
-        let password = ''
+        let name = 'adm';
+        let email = 'adm@adm';
+        let avatar = 'avatar.png';
+        let password = '123'
 
         // #### Access Method 
         this.getName = () => name;
@@ -16,8 +16,8 @@ class User {
         this.getEmail = () => email;
         this.setEmail = (newemail) => email = newemail;
 
-        this.getBirthDate = () => birthDate;
-        this.setBirthDate = (newBirthDate) => birthDate = newBirthDate;
+        this.getAvatar = () => avatar;
+        this.setAvatar = (newAvatar) => avatar = newAvatar;
 
         this.getPassword = () => password;
         this.setPassword = (newPassword) => password = newPassword;
@@ -27,8 +27,10 @@ class User {
         return {
             name: this.getName(),
             email: this.getEmail(),
-            birthDate: this.getBirthDate(),
-            password: bcrypt.hashSync(this.getPassword(), 8)
+            avatar: this.getAvatar(),
+            password: bcrypt.hashSync(this.getPassword(), 8),
+            created_at: new Date(),
+            updated_at: new Date()
         }
     }
     //#### returns true or false the comparison of the encrypted password
