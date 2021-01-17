@@ -1,7 +1,7 @@
 const {
     User,
     sequelize
-} = require('../../api/models');
+} = require('../models');
 const UserObject = require('../../class/User')
 const {
     Op
@@ -142,7 +142,8 @@ const userController = {
                 name,
                 email,
                 avatar,
-                password
+                password,
+                status
             } = req.body
             const resp = await User.findByPk(id)
             const userInstace = new UserObject()
@@ -150,12 +151,14 @@ const userController = {
             userInstace.setEmail(email === '' ? resp.email : email)
             userInstace.setAvatar(avatar === '' ? resp.avatar : avatar)
             userInstace.setPassword(password === '' ? resp.password : await userInstace.hash(password))
+            userInstace.setStatus(status === '' ? resp.status : status)
 
             const userCreate = {
                 name: userInstace.getName(),
                 email: userInstace.getEmail(),
                 avatar: userInstace.getAvatar(),
                 password: userInstace.getPassword(),
+                status: userInstace.getStatus(),
             }
             const update = await User.update(userCreate, {
                 where: {
