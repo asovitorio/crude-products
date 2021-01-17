@@ -27,7 +27,8 @@ const userController = {
                     exclude: ['password']
                 },
             })
-            const totalPages = Math.round(total / limit)
+            const totalPages = Math.ceil(total / limit)
+          
             return res.status(200).json({
                 users,
                 totalPages
@@ -86,27 +87,12 @@ const userController = {
                 exclude: ['password']
             },
         })
-        const totalPages = Math.round(total / limit)
+        const totalPages = Math.ceil(total / limit)
         return res.status(200).json({
             users,
             totalPages
         })
-
-        // try {
-        //     const user = await User.findAll({
-        //         where:{
-        //             [fieldName]: {
-        //                 [Op.like]:`%${queryValue}%`
-        //             }
-        //         },
-        //             attributes: {
-        //                 exclude: ['password']
-        //             },
-        //     });
-        //      return res.status(200).json(user);
-        // } catch (error) {
-        //     return res.status(404).json({status:404,msg:`${error}`});
-        // }
+       
     },
     // ########## Insere um usuário no Banco de dados ######## 
     // ########## Insert into data base User  ######## 
@@ -175,6 +161,8 @@ const userController = {
             })
         }
     },
+     // ########## Exclui um usuário no Banco de dados ######## 
+    // ########## delete into one tupla data base User  ######## 
     delete: async (req, res) => {
         const {
             id
@@ -185,7 +173,6 @@ const userController = {
             }
         })
         res.status(200).json(del)
-
     },
 }
 

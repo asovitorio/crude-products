@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs')
+require('dotenv').config()
 class User {
 
     constructor() {
@@ -48,8 +49,6 @@ class User {
         const hash = await bcrypt.hashSync(password, 8)
         return  hash
        }
-
-
 
 }
 
