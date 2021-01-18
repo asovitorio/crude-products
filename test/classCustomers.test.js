@@ -19,9 +19,6 @@ describe('Class Tests Customers', () => {
     it('should check the object value key Customers.cellphone ', () => {
         expect(objeto).toHaveProperty('cellphone','+551198881111');
     });
-  
-
-
         
     });
 

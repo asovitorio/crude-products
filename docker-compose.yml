@@ -1,10 +1,10 @@
 version: "3.2"  # optional since v1.27.0
 services:
-  oficina:
+  crude:
     build: .
     command: npm start
     ports:
-      - "3000:3000"
+      - "3333:3333"
     volumes:
       - .:/usr/app
   db:

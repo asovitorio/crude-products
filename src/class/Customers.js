@@ -3,6 +3,7 @@ const { get } = require('../routes');
 class Customers {
     constructor() {
         // #### Atributos Privados da classe Factory de objetos
+       
         let name = 'Cliente1';
         let date_birth = moment(Date.now()).format('Y-M-D')
         let email = 'adm@adm'

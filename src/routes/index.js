@@ -19,6 +19,11 @@ router.post('/auth', authController.auth);
 
 // ######## ROUTES C.R.U.D.E. CUSTOMERS  #########
 router.get('/customers',customersController.index)
+router.get('/customers/:id',customersController.showId)
+router.get('/search/customers', customersController.showParams);
+router.post('/customers',customersController.create)
+router.put('/customers',customersController.update)
+router.delete('/customers',customersController.delete)
 
 
 module.exports = router;
