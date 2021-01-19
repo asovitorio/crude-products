@@ -14,7 +14,7 @@ const userController = {
             const {
                 page = 1
             } = req.query
-            const limit = 5;
+            const limit = 3;
             const offset = page < 1 ? 0 : (page - 1) * limit
 
             const {
