@@ -33,15 +33,18 @@ var bcrypt = require('bcryptjs');
 
 var moment = require('moment')
 
-var cust = new Customers()
-cust.setName('Alessandro')
-cust.setDateBirth('1980-03-03')
-cust.setEmail('asovitorio@gmail.com')
-cust.setCellphone('11954965202')
+// var cust = new Customers()
+// cust.setName('Alessandro')
+// cust.setDateBirth('1980-03-03')
+// cust.setEmail('asovitorio@gmail.com')
+// cust.setCellphone('11954965202')
 
 
-// console.log(cust.getName())
-// console.log(cust.getDateBirth())
-// console.log(cust.getEmail())
-// console.log(cust.getCellphone())
-console.log(cust.print())
+// // console.log(cust.getName())
+// // console.log(cust.getDateBirth())
+// // console.log(cust.getEmail())
+// // console.log(cust.getCellphone())
+// console.log(cust.print())
+
+
+console.log(moment(Date.now()))

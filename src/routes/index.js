@@ -5,7 +5,7 @@ const customersController = require('../api/controllers/customersController')
 const authMiddleware = require('../api/middleware/authMiddleware')
 var router = express.Router();
 
-// ######## ROUTES C.R.U.D.E. USER #########
+// ######## ROUTES C.R.U.D. USER #########
 router.get('/user', userController.index);
 router.get('/user/:id', userController.showId);
 router.get('/search/user', userController.showParams);
@@ -17,7 +17,7 @@ router.delete('/user', userController.delete);
 router.post('/auth', authController.auth);
 
 
-// ######## ROUTES C.R.U.D.E. CUSTOMERS  #########
+// ######## ROUTES C.R.U.D.. CUSTOMERS  #########
 router.get('/customers',customersController.index)
 router.get('/customers/:id',customersController.showId)
 router.get('/search/customers', customersController.showParams);

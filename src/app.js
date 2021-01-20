@@ -2,8 +2,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var schedule = require('node-schedule');
 var indexRouter = require('./routes/index');
+let whatsApp = require('./services/whatsAppSend')
 
 require("dotenv").config({
     path: process.env.NODE_ENV ==='test' ? '.env.test':'.env' 
@@ -15,19 +16,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 // endpoint
 app.use('/api/v1', indexRouter);
 
-// const {User} = require('./api/models')
+// #### Service of Msg whatsApp 
 
-// async function teste(){
-//     const t = await User.findAll()
-//     const u = Object(t)
-   
-//   u.map(p =>{
-//       console.log(p.name)
-//   })
-    
-// }
-//  teste()
+var j = schedule.scheduleJob('0 0 12 * * *', function(){
+    whatsApp.send()
+})
+
+ 
+
+
 module.exports = app;
