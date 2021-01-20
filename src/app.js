@@ -22,9 +22,9 @@ app.use('/api/v1', indexRouter);
 
 // #### Service of Msg whatsApp 
 
-var j = schedule.scheduleJob('0 0 12 * * *', function(){
-    whatsApp.send()
-})
+// var j = schedule.scheduleJob('0 0 12 * * *', function(){
+//     whatsApp.send()
+// })
 
  
 
