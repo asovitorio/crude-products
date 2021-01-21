@@ -20,11 +20,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // endpoint
 app.use('/api/v1', indexRouter);
 
-// #### Service of Msg whatsApp 
+//#### Service of Msg whatsApp
 
-// var j = schedule.scheduleJob('0 0 12 * * *', function(){
-//     whatsApp.send()
-// })
+var j = schedule.scheduleJob('*/5 * * * *', function(){
+  whatsApp.send()
+  
+})
 
  
 

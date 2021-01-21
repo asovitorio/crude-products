@@ -4,7 +4,7 @@ const moment = require('moment')
 const whatsApp = {
 
     send: () => {
-        const date = moment(Date.now())
+        const date = moment('2021-03-06')
         dateBirthDay.findDateBirth(date)
             .then(res => {
 
