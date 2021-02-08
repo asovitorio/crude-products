@@ -31,7 +31,7 @@
         
 // //  },10000)  
 
-// var moment = require('moment')
+ var moment = require('moment')
 
 // // var cust = new Customers()
 // // cust.setName('Alessandro')
@@ -47,4 +47,5 @@
 // // console.log(cust.print())
 
 
-// console.log(moment(Date.now()))
+ console.log(moment(new Date).format('Y-M-D'))
+

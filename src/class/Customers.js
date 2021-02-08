@@ -15,7 +15,7 @@ class Customers {
         this.getDateBirth = () => date_birth;
         this.setDateBirth = (dateBirthCustomers) => date_birth = moment(dateBirthCustomers).format('Y-M-D')
         this.getCellphone = () => cellphone;
-        this.setCellphone = (cellphoneCustomers) => cellphone = '55'+ cellphoneCustomers
+        this.setCellphone = (cellphoneCustomers) => cellphone = cellphoneCustomers
     }
 
     print(){

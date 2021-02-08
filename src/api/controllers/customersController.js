@@ -15,15 +15,19 @@ const customersController = {
             const {
                 page = 1
             } = req.query
-            const limit = 3;
+            const limit = 6;
             const offset = page < 1 ? 0 : (page - 1) * limit
 
             const {
                 count: total,
                 rows: customers
             } = await Customers.findAndCountAll({
+                order:[[
+                    'name','ASC'
+                ]],
                 offset: parseInt(offset),
                 limit,
+             
                
             })
             const totalPages = Math.ceil(total / limit)
@@ -64,7 +68,7 @@ const customersController = {
         const queryValue = req.query[fieldName[0]]
         const page =req.query[fieldName[1]]
         
-        const limit = 3;
+        const limit = 10;
         const offset = page < 1 ? 0 : (page - 1) * limit
         console.log(queryValue)
        
@@ -72,6 +76,9 @@ const customersController = {
             count: total,
             rows: customers
         } = await Customers.findAndCountAll({
+            order:[[
+                'name','ASC'
+            ]],
             offset: parseInt(offset),
             limit,
             where: {
@@ -82,6 +89,7 @@ const customersController = {
             attributes: {
                 exclude: ['password']
             },
+           
         })
         const totalPages = Math.ceil(total / limit)
         return res.status(200).json({
@@ -101,10 +109,11 @@ const customersController = {
                 email,
                 cellphone,
             } = req.body
+           
             customers.setName(name)
-            customers.setEmail(date_birth)
+            customers.setDateBirth(date_birth)
             customers.setEmail(email)
-            customers.setCellphone(cellphone)
+            customers.setCellphone('+55'+ cellphone)
             const resp = await Customers.create(customers.print())
             res.status(201).json({
                 id: resp.id,
@@ -133,7 +142,7 @@ const customersController = {
             const resp = await Customers.findByPk(id)
             const customers = new CustomersObject()
             customers.setName(name === '' ? resp.name : name)
-            customers.setDateBirth(name === '' ? resp.date_birth : date_birth)
+            customers.setDateBirth(date_birth === '' ? resp.date_birth : date_birth)
             customers.setEmail(email === '' ? resp.email : email)
             customers.setCellphone(cellphone === '' ? resp.cellphone : cellphone)
             const update = await Customers.update(customers.print() , {
@@ -154,15 +163,21 @@ const customersController = {
     // ########## Exclui um clientes no Banco de dados ######## 
     // ########## delete into one tupla data base Customers  ######## 
     delete: async (req,res) => {
-        const {
-            id
-        } = req.body
-        const del = await Customers.destroy({
-            where: {
+        try {
+            const {
                 id
-            }
-        })
-        res.status(200).json(del)
+            } = req.params
+           
+            const del = await Customers.destroy({
+                where: {
+                    id
+                }
+            })
+            res.status(200).json(del)
+            
+        } catch (error) {
+            res.status(401).json(del)
+        }
     
     },
 }

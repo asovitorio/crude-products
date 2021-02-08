@@ -1,10 +1,11 @@
 const wbm = require('wbm');
 const dateBirthDay = require('../database/dao/queryFactory')
-const moment = require('moment')
+const format = require('date-fns/format')
 const whatsApp = {
 
     send: () => {
-        const date = moment('2021-03-06')
+        const date = format(new Date(Date.now()), 'yyyy-MM-dd')
+        console.log(date)
         dateBirthDay.findDateBirth(date)
             .then(res => {
 
