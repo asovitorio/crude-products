@@ -23,7 +23,7 @@ const whatsApp = {
                     wbm.start().then(async () => {
                         const contacts = birthDayCustomers;
                         // const message = ''+ contacts.name + ' '
-                        const message = ('*Parabens para Você!* Sr(a) {{name}} Feliz Aniversário!! Eu sou um Robô Testando API => A cada 5min  você vai receber uma msg por 3x !!!\n Falta só o front-end')
+                        const message = ('*Parabens para Você!* Sr(a) {{name}} Feliz Aniversário!!')
 
                         await wbm.send(contacts, message);
                         await wbm.end();
