@@ -3,15 +3,11 @@ const { get } = require('../routes');
 class Customers {
     constructor() {
         // #### Atributos Privados da classe Factory de objetos
-       
         let name = 'Cliente1';
         let date_birth = moment(Date.now()).format('Y-M-D')
         let email = 'adm@adm'
-        let cellphone = '+551198881111'
-       
-
+        let cellphone = '551198881111'
         // #### Access Method 
-
         this.getName = () => name;
         this.setName = (nameCustomers) => name =nameCustomers
         this.getEmail = () => email;
@@ -19,7 +15,7 @@ class Customers {
         this.getDateBirth = () => date_birth;
         this.setDateBirth = (dateBirthCustomers) => date_birth = moment(dateBirthCustomers).format('Y-M-D')
         this.getCellphone = () => cellphone;
-        this.setCellphone = (cellphoneCustomers) => cellphone = '+55'+ cellphoneCustomers
+        this.setCellphone = (cellphoneCustomers) => cellphone = cellphoneCustomers
     }
 
     print(){

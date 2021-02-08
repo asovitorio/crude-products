@@ -1,4 +1,5 @@
 const User = require('../src/class/User');
+
 describe('Class Tests Users', () => {
     const user = new User()
     user.setName('Alessandro')

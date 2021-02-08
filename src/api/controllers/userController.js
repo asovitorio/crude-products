@@ -14,7 +14,7 @@ const userController = {
             const {
                 page = 1
             } = req.query
-            const limit = 5;
+            const limit = 6;
             const offset = page < 1 ? 0 : (page - 1) * limit
 
             const {
@@ -68,7 +68,7 @@ const userController = {
         const queryValue = req.query[fieldName[0]]
         const page =req.query[fieldName[1]]
         
-        const limit = 3;
+        const limit = 6;
         const offset = page < 1 ? 0 : (page - 1) * limit
         console.log(queryValue)
        
@@ -146,6 +146,7 @@ const userController = {
                 password: userInstace.getPassword(),
                 status: userInstace.getStatus(),
             }
+           
             const update = await User.update(userCreate, {
                 where: {
                     id
@@ -164,9 +165,11 @@ const userController = {
      // ########## Exclui um usuário no Banco de dados ######## 
     // ########## delete into one tupla data base User  ######## 
     delete: async (req, res) => {
+        
         const {
             id
-        } = req.body
+        } = req.params
+        
         const del = await User.destroy({
             where: {
                 id
