@@ -24,15 +24,15 @@ const authController = {
         });
 
         // Check if a user exists only by email 
-        if (!user) return res.send({
-            msg: 'ueser or password error'
-        })
+        if (!user) return res.status(401).json({
+            msg:`User or password invalid`
+        });
 
         // Check that the password is correct
         const autentication = await userClass.compare(user.password);
-        if (!autentication) return res.send({
-            msg: 'ueser or password error'
-        })
+        if (!autentication)  return res.status(401).json({
+            msg:`User or password invalid`
+        });
 
         try {
             const usuToken = {
@@ -46,7 +46,7 @@ const authController = {
                 expiresIn: '48h'
             })
             return res.status(200).json(
-               { token}
+               {usuToken,token}
             );
 
         } catch (error) {

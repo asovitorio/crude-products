@@ -164,9 +164,11 @@ const userController = {
      // ########## Exclui um usuário no Banco de dados ######## 
     // ########## delete into one tupla data base User  ######## 
     delete: async (req, res) => {
+        
         const {
             id
-        } = req.body
+        } = req.params
+        
         const del = await User.destroy({
             where: {
                 id
