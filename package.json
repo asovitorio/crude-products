@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon ./src/bin/www",
-    "start": "nodemon --legacy-watch ./src/bin/www",
+    "dev": "nodemon --legacy-watch ./src/bin/www",
+    "start": "sequelize db:migrate && sequelize db:seed:all && node ./src/bin/www",
     "test": "set NODE_ENV=test && jest"
   },
   "dependencies": {
