@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon --legacy-watch ./src/bin/www",
-    "start": "sequelize db:migrate && sequelize db:seed:all && node ./src/bin/www",
+    "start": "node ./src/bin/www",
     "test": "set NODE_ENV=test && jest"
   },
   "dependencies": {
