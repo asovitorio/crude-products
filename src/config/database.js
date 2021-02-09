@@ -9,10 +9,7 @@ module.exports = {
   port: parseInt(process.env.DB_PORT) || 3306,
   use_env_variable:"DATABASE_URL",
   dialect:"postgres",
-  dialectOptions:{
-    ssl:true
-  },
-  logging: false,
+   logging: false,
   define: {
     timestamps: true,
     underscored: true,
