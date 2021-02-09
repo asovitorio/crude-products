@@ -7,8 +7,7 @@ module.exports = {
 //  host:'banco-dados',
    dialect: process.env.DB_DIALECT,
   port: parseInt(process.env.DB_PORT) || 3306,
-  use_env_variable:"DATABASE_URL",
-  // dialect:"postgres",
+ // dialect:"postgres",
    logging: false,
   define: {
     timestamps: true,
