@@ -6,7 +6,7 @@ module.exports = {
   host: process.env.DB_HOST,
 //  host:'banco-dados',
    dialect: process.env.DB_DIALECT,
-  port: parseInt(process.env.DB_PORT) || 3306,
+  port: parseInt(process.env.DB_PORT) || 5432
  // dialect:"postgres",
    logging: false,
   define: {
