@@ -11,7 +11,7 @@ router.get('/user',authMiddleware.auth, userController.index);
 router.get('/user/:id',authMiddleware.auth, userController.showId);
 router.get('/search/user',authMiddleware.auth, userController.showParams);
 router.post('/user',authMiddleware.auth, userController.create);
-router.put('/user', userController.update);
+router.put('/user',authMiddleware.auth,userController.update);
 router.delete('/user/:id',authMiddleware.auth, userController.delete);
 
 // ######## ROUTES AUTH  #########

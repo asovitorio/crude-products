@@ -4,7 +4,7 @@ module.exports = {
   password: process.env.DB_PASS,
   database: process.env.DB_DATABASE,
   host: process.env.DB_HOST,
-//  host:'banco-dados',
+  // host:'banco-dados',
    dialect: process.env.DB_DIALECT,
   port: parseInt(process.env.DB_PORT) || 5432,
  // dialect:"postgres",
